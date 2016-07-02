@@ -13555,10 +13555,10 @@ unfilled</description>
 <part name="GATE_DRIVER" library="pinhead" deviceset="PINHD-1X4" device=""/>
 <part name="BATT_POWER" library="pinhead" deviceset="PINHD-1X3" device=""/>
 <part name="IC1" library="v-reg-3" deviceset="LM2676" device="S"/>
-<part name="C11" library="resistor" deviceset="C-US" device="C0805" value="100u"/>
-<part name="C12" library="resistor" deviceset="C-US" device="C0805" value="180u"/>
+<part name="C11" library="resistor" deviceset="C-US" device="C0805" value="30u"/>
+<part name="C12" library="resistor" deviceset="C-US" device="C0805" value="100u"/>
 <part name="C13" library="resistor" deviceset="C-US" device="C0805" value="0.01u"/>
-<part name="L1" library="resistor" deviceset="L-US" device="L1812" value="33u"/>
+<part name="L1" library="resistor" deviceset="L-US" device="L1812" value="68u"/>
 <part name="D18" library="diode" deviceset="1N4728" device=""/>
 <part name="SUPPLY5" library="supply2" deviceset="GND" device=""/>
 </parts>
