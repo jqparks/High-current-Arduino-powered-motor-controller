@@ -13555,9 +13555,7 @@ unfilled</description>
 <part name="GATE_DRIVER" library="pinhead" deviceset="PINHD-1X4" device=""/>
 <part name="BATT_POWER" library="pinhead" deviceset="PINHD-1X3" device=""/>
 <part name="IC1" library="v-reg-3" deviceset="LM2676" device="S"/>
-<part name="C9" library="resistor" deviceset="C-US" device="C0805" value="0.47u"/>
-<part name="C10" library="resistor" deviceset="C-US" device="C0805" value="15u"/>
-<part name="C11" library="resistor" deviceset="C-US" device="C0805" value="15u"/>
+<part name="C11" library="resistor" deviceset="C-US" device="C0805" value="100u"/>
 <part name="C12" library="resistor" deviceset="C-US" device="C0805" value="180u"/>
 <part name="C13" library="resistor" deviceset="C-US" device="C0805" value="0.01u"/>
 <part name="L1" library="resistor" deviceset="L-US" device="L1812" value="33u"/>
@@ -13617,9 +13615,7 @@ unfilled</description>
 <instance part="GATE_DRIVER" gate="A" x="-17.78" y="0"/>
 <instance part="BATT_POWER" gate="A" x="111.76" y="78.74"/>
 <instance part="IC1" gate="A" x="-53.34" y="38.1"/>
-<instance part="C9" gate="G$1" x="-78.74" y="38.1"/>
-<instance part="C10" gate="G$1" x="-91.44" y="38.1"/>
-<instance part="C11" gate="G$1" x="-104.14" y="38.1"/>
+<instance part="C11" gate="G$1" x="-73.66" y="38.1"/>
 <instance part="C12" gate="G$1" x="-7.62" y="27.94"/>
 <instance part="C13" gate="G$1" x="-35.56" y="38.1" rot="R90"/>
 <instance part="L1" gate="G$1" x="-17.78" y="33.02" rot="R90"/>
@@ -13959,13 +13955,7 @@ unfilled</description>
 <segment>
 <pinref part="C11" gate="G$1" pin="2"/>
 <pinref part="IC1" gate="A" pin="GND"/>
-<wire x1="-104.14" y1="33.02" x2="-91.44" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="C10" gate="G$1" pin="2"/>
-<wire x1="-91.44" y1="33.02" x2="-78.74" y2="33.02" width="0.1524" layer="91"/>
-<junction x="-91.44" y="33.02"/>
-<pinref part="C9" gate="G$1" pin="2"/>
-<wire x1="-78.74" y1="33.02" x2="-66.04" y2="33.02" width="0.1524" layer="91"/>
-<junction x="-78.74" y="33.02"/>
+<wire x1="-73.66" y1="33.02" x2="-66.04" y2="33.02" width="0.1524" layer="91"/>
 <pinref part="C12" gate="G$1" pin="2"/>
 <wire x1="-66.04" y1="33.02" x2="-63.5" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="-7.62" y1="22.86" x2="-27.94" y2="22.86" width="0.1524" layer="91"/>
@@ -14130,17 +14120,9 @@ unfilled</description>
 <segment>
 <pinref part="IC1" gate="A" pin="VIN"/>
 <pinref part="C11" gate="G$1" pin="1"/>
-<wire x1="-63.5" y1="43.18" x2="-78.74" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="-78.74" y1="43.18" x2="-91.44" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="-91.44" y1="43.18" x2="-104.14" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="-104.14" y1="43.18" x2="-104.14" y2="40.64" width="0.1524" layer="91"/>
-<pinref part="C10" gate="G$1" pin="1"/>
-<wire x1="-91.44" y1="40.64" x2="-91.44" y2="43.18" width="0.1524" layer="91"/>
-<junction x="-91.44" y="43.18"/>
-<pinref part="C9" gate="G$1" pin="1"/>
-<wire x1="-78.74" y1="40.64" x2="-78.74" y2="43.18" width="0.1524" layer="91"/>
-<junction x="-78.74" y="43.18"/>
-<label x="-104.14" y="43.18" size="1.778" layer="95" rot="R180" xref="yes"/>
+<wire x1="-63.5" y1="43.18" x2="-73.66" y2="43.18" width="0.1524" layer="91"/>
+<wire x1="-73.66" y1="43.18" x2="-73.66" y2="40.64" width="0.1524" layer="91"/>
+<label x="-73.66" y="43.18" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$16" class="0">
