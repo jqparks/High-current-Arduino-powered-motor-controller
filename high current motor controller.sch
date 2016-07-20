@@ -13421,14 +13421,6 @@ unfilled</description>
 </library>
 <library name="connector">
 <packages>
-<package name="MOLEX_50A">
-<wire x1="-13.95" y1="10.8" x2="13.95" y2="10.8" width="0.127" layer="21"/>
-<wire x1="13.95" y1="10.8" x2="13.95" y2="-10.8" width="0.127" layer="21"/>
-<wire x1="13.95" y1="-10.8" x2="-13.95" y2="-10.8" width="0.127" layer="21"/>
-<wire x1="-13.95" y1="-10.8" x2="-13.95" y2="10.8" width="0.127" layer="21"/>
-<pad name="P$1" x="-6.35" y="6.5" drill="4"/>
-<pad name="P$2" x="6.35" y="-6.5" drill="4"/>
-</package>
 <package name="TE_125A">
 <wire x1="-15" y1="15.5" x2="15" y2="15.5" width="0.127" layer="21"/>
 <wire x1="15" y1="15.5" x2="15" y2="-15.5" width="0.127" layer="21"/>
@@ -13443,6 +13435,14 @@ unfilled</description>
 <pad name="P$7" x="5.6" y="0" drill="2"/>
 <pad name="P$8" x="9.4" y="0" drill="2"/>
 </package>
+<package name="MOLEX_50A">
+<wire x1="-13.95" y1="10.8" x2="13.95" y2="10.8" width="0.127" layer="21"/>
+<wire x1="13.95" y1="10.8" x2="13.95" y2="-10.8" width="0.127" layer="21"/>
+<wire x1="13.95" y1="-10.8" x2="-13.95" y2="-10.8" width="0.127" layer="21"/>
+<wire x1="-13.95" y1="-10.8" x2="-13.95" y2="10.8" width="0.127" layer="21"/>
+<pad name="P$1" x="-6.35" y="6.5" drill="4"/>
+<pad name="P$2" x="6.35" y="-6.5" drill="4"/>
+</package>
 </packages>
 <symbols>
 <symbol name="2PIN">
@@ -13450,13 +13450,29 @@ unfilled</description>
 <wire x1="20.32" y1="12.7" x2="20.32" y2="-12.7" width="0.254" layer="94"/>
 <wire x1="20.32" y1="-12.7" x2="-20.32" y2="-12.7" width="0.254" layer="94"/>
 <wire x1="-20.32" y1="-12.7" x2="-20.32" y2="12.7" width="0.254" layer="94"/>
-<pin name="P$1" x="-10.16" y="0" length="middle" rot="R270"/>
-<pin name="P$2" x="10.16" y="0" length="middle" rot="R270"/>
+<pin name="P$1" x="-10.16" y="-5.08" length="middle" rot="R90"/>
+<pin name="P$2" x="10.16" y="-5.08" length="middle" rot="R90"/>
 <circle x="-10.16" y="5.08" radius="5.08" width="0.254" layer="94"/>
 <circle x="10.16" y="5.08" radius="5.08" width="0.254" layer="94"/>
 </symbol>
 </symbols>
 <devicesets>
+<deviceset name="TE_2PIN_125A">
+<gates>
+<gate name="G$1" symbol="2PIN" x="0" y="0"/>
+</gates>
+<devices>
+<device name="" package="TE_125A">
+<connects>
+<connect gate="G$1" pin="P$1" pad="P$1 P$1.1 P$1.2 P$1.3"/>
+<connect gate="G$1" pin="P$2" pad="P$5 P$6 P$7 P$8"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
 <deviceset name="MOLEX_2PIN_50A">
 <gates>
 <gate name="G$1" symbol="2PIN" x="0" y="0"/>
@@ -13466,22 +13482,6 @@ unfilled</description>
 <connects>
 <connect gate="G$1" pin="P$1" pad="P$1"/>
 <connect gate="G$1" pin="P$2" pad="P$2"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="TE_2PIN_125A">
-<gates>
-<gate name="G$1" symbol="2PIN" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="TE_125A">
-<connects>
-<connect gate="G$1" pin="P$1" pad="P$1"/>
-<connect gate="G$1" pin="P$2" pad="P$5"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -13555,8 +13555,8 @@ unfilled</description>
 <part name="SUPPLY5" library="supply2" deviceset="GND" device=""/>
 <part name="C9" library="resistor" deviceset="C-US" device="C0805" value="4.7u"/>
 <part name="C10" library="resistor" deviceset="C-US" device="C0805" value="4.7u"/>
-<part name="U$3" library="connector" deviceset="MOLEX_2PIN_50A" device=""/>
-<part name="U$4" library="connector" deviceset="TE_2PIN_125A" device=""/>
+<part name="U$3" library="connector" deviceset="TE_2PIN_125A" device=""/>
+<part name="U$4" library="connector" deviceset="MOLEX_2PIN_50A" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13617,8 +13617,8 @@ unfilled</description>
 <instance part="SUPPLY5" gate="GND" x="-74.93" y="-104.14"/>
 <instance part="C9" gate="G$1" x="-114.3" y="-86.36"/>
 <instance part="C10" gate="G$1" x="-124.46" y="-86.36"/>
-<instance part="U$3" gate="G$1" x="-96.52" y="43.18"/>
-<instance part="U$4" gate="G$1" x="-96.52" y="-5.08"/>
+<instance part="U$3" gate="G$1" x="-104.14" y="22.86"/>
+<instance part="U$4" gate="G$1" x="-104.14" y="-15.24"/>
 </instances>
 <busses>
 </busses>
@@ -13691,9 +13691,9 @@ unfilled</description>
 <label x="63.5" y="-12.7" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="P$1"/>
-<wire x1="-106.68" y1="43.18" x2="-106.68" y2="27.94" width="0.1524" layer="91"/>
-<label x="-106.68" y="27.94" size="1.778" layer="95" rot="R270" xref="yes"/>
+<pinref part="U$4" gate="G$1" pin="P$1"/>
+<wire x1="-114.3" y1="-20.32" x2="-114.3" y2="-30.48" width="0.1524" layer="91"/>
+<label x="-114.3" y="-30.48" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -13829,9 +13829,9 @@ unfilled</description>
 <label x="143.51" y="-15.24" size="1.778" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="P$2"/>
-<wire x1="-86.36" y1="43.18" x2="-86.36" y2="27.94" width="0.1524" layer="91"/>
-<label x="-86.36" y="27.94" size="1.778" layer="95" rot="R270" xref="yes"/>
+<pinref part="U$4" gate="G$1" pin="P$2"/>
+<wire x1="-93.98" y1="-20.32" x2="-93.98" y2="-30.48" width="0.1524" layer="91"/>
+<label x="-93.98" y="-30.48" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -13976,11 +13976,9 @@ unfilled</description>
 <junction x="-114.3" y="-91.44"/>
 </segment>
 <segment>
-<wire x1="-86.36" y1="0" x2="-86.36" y2="-5.08" width="0.1524" layer="91"/>
-<label x="-86.36" y="-20.32" size="1.778" layer="95" rot="R270" xref="yes"/>
-<pinref part="U$4" gate="G$1" pin="P$2"/>
-<wire x1="-86.36" y1="-5.08" x2="-86.36" y2="-20.32" width="0.1524" layer="91"/>
-<junction x="-86.36" y="-5.08"/>
+<pinref part="U$3" gate="G$1" pin="P$2"/>
+<wire x1="-93.98" y1="17.78" x2="-93.98" y2="7.62" width="0.1524" layer="91"/>
+<label x="-93.98" y="7.62" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="12V" class="0">
@@ -14146,11 +14144,9 @@ unfilled</description>
 <junction x="-114.3" y="-81.28"/>
 </segment>
 <segment>
-<wire x1="-106.68" y1="0" x2="-106.68" y2="-5.08" width="0.1524" layer="91"/>
-<label x="-106.68" y="-20.32" size="1.778" layer="95" rot="R270" xref="yes"/>
-<pinref part="U$4" gate="G$1" pin="P$1"/>
-<wire x1="-106.68" y1="-5.08" x2="-106.68" y2="-20.32" width="0.1524" layer="91"/>
-<junction x="-106.68" y="-5.08"/>
+<pinref part="U$3" gate="G$1" pin="P$1"/>
+<wire x1="-114.3" y1="17.78" x2="-114.3" y2="7.62" width="0.1524" layer="91"/>
+<label x="-114.3" y="7.62" size="1.778" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$16" class="0">
